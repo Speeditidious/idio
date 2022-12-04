@@ -35,7 +35,7 @@ List<String> user_name_list = new ArrayList<String>();
 		
 		</div>
 		<div class="register-container">
-			<form method="post" action="../jsp/validate_signup.jsp">
+			<form method="post" action="./validate_signup.jsp">
 				<div class="mb-3">
 				  	<label for="id" class="form-label">Id</label>
 				  	<input type="text" class="form-control" name="userid" id="signup-userid" placeholder="id">
