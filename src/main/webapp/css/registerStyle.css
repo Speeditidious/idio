@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
 
+body,
+input,
+textarea,
+button{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+}
+
 body{
   margin: 0;
   padding: 0;
@@ -60,6 +68,10 @@ body{
   margin: 10px 0px 20px 0px;
 }
 
+#container-input-form-userid{
+	margin-bottom: 0px;
+}
+
 .title-input{
   font-weight: bold;
   font-size: 24px;
@@ -74,6 +86,24 @@ body{
 
 .input-form:focus{
   outline: none;
+}
+
+.container-check-availability{
+	display: flex;
+}
+
+.input-check-availability{
+	padding: 5px 10px;
+	font-size: 14px;
+	margin: 7px 0px 10px 0px;
+	border: none;
+	border-radius: 3px;
+	box-shadow: 3px 3px 3px rgba(0,0,0,0.2);
+}
+
+.availability-description{
+	margin: 10px 10px;
+	color: lime;
 }
 
 .error{
@@ -109,5 +139,6 @@ body{
 }
 
 .container-signup{
+	text-align: center;
   margin-top: 15px;
 }

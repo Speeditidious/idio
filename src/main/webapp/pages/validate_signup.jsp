@@ -4,17 +4,14 @@
 <head>
 	<meta charset="utf-8">
   	<title>Web programming</title>
-  	<link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
 <%@ page import ="java.sql.*" %>
 <%
-
-String user_name="";
 	try{
- 		String userid = request.getParameter("userid");
+ 		String userid = request.getParameter("id");
      	String username = request.getParameter("username");   
      	String password = request.getParameter("password");
      	String email = request.getParameter("email") ;
@@ -30,15 +27,13 @@ String user_name="";
      	ps.setString(4, email);
      
      	int i=ps.executeUpdate();
-     
-     	user_name = username;
+     	
+     	response.sendRedirect("./login.html");
 	}
 	catch(Exception e){       
     	out.println(e);       
-	}      
+	}
 %>
-
-Welcome,  you logined as: <%=user_name%>
 
 </body>
 

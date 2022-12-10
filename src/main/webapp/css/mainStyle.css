@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+
+body,
+input,
+textarea,
+button{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+}
+
+
+body{
+	margin: 0;
+	line-height: 1.5;
+}
+
+*{
+	box-sizing: border-box;
+	margin: 0;
+}
+
+/* header start */
+.header{
+	width: 100%;
+	margin: auto;
+}
+
+.row{
+	max-width: 1170px;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	background-color: blue;
+}
+
+.header-logo{
+	background-color: red;
+}
+
+.header-logo button{
+	background-color: transparent;
+	border: none;
+	cursor: pointer;
+}
+
+.header-logo img{
+	width: 120px;
+}
+
+.header-menu{
+	background-color: green;
+	display: flex;
+	align-items: center;
+	justify-content: cetner;
+}
+
+.header-menu ul{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.header-menu ul li{
+	display: inline-block;
+}
+
+.header-menu ul li a{
+	display: block;
+	text-decoration: none;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 15px 40px;
+	margin: auto 0;
+	background-color: red;
+}
+
+#header-profile{
+	font-weight: 400;
+}
+/* header end */
+
+/* banner start */
+.container-banner{
+	width: 100%;
+	background-color: lime;
+}
+/* banner end */
+
+/* main start */
+.container-main{
+	max-width: 1170px;
+	margin: auto;
+	padding: 20px;
+	background-color: lightblue;
+}
+
+.post-category-title{
+	font-weight: bold;
+	font-size: 36px; 
+}
+
+.post-recent-grid{
+	margin: 20px 0px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+}
+
+.post-item{
+	width: 270px;
+	height: 270px;
+	background-color: white;
+	border-radius: 10px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+	display: flex;
+	flex-direction: column;
+}
+
+.post-thumbnail{
+	flex-grow: 14;
+	border-radius: 10px 10px 0px 0px;
+	background-color: red;
+}
+
+.post-title{
+	flex-grow: 4;
+	padding: 10px 20px;
+	font-weight: bold;
+	background-color: blue;
+}
+
+.post-footer{
+	flex-grow: 2;
+	border-radius: 0px 0px 10px 10px;
+	background-color: green;
+}
+/* main end */
+
+/* post start */
+.container-post{
+	max-width: 1170px;
+	margin: auto;
+	padding: 20px;
+	background-color: lightblue;
+}
+
+.upload-text-title{
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.container-upload-title{
+	margin: 10px 0px;
+	background-color: red;
+}
+
+.container-upload-draw{
+	margin: 10px 0px;
+	display: flex;
+	gap: 40px;
+	background-color: blue;
+}
+
+.draw-canvas{
+	width: 800px;
+	height: 480px;
+	border: 2px solid black;
+	background-color: white;
+}
+
+.container-tool{
+	width: 350px;
+	height: 480px;
+	border: 2px solid black;
+	background-color: white;
+}
+
+.container-tool-selection{
+	display: flex;
+}
+
+.container-tool-selection button{
+	flex-grow: 1;
+	height: 40px;
+	border: none;
+	cursor: pointer;
+}
+
+.button-tool-active{
+	background-color: #EB6440;
+	color: white;
+	font-weight: bold;
+}
+
+.button-tool-inactive{
+	color: black;
+	font-weight: 400;
+}
+
+.container-tool-box{
+	background-color: gray;
+}
+
+.container-pallete{
+	width: 150px;
+	margin: 10px auto;
+	display: flex;
+	justify-content: space-around;
+	background-color: red;
+}
+
+.container-upload-description{
+	margin: 10px 0px;
+	background-color: green;
+}
+/* post end */

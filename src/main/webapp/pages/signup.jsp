@@ -4,11 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>idio - Sign up</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-	<link rel="stylesheet" href="../css/style.css">
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="../css/registerStyle.css">
 </head>
 <body>
-<%@ page import ="java.sql.*" %>
+<%-- <%@ page import ="java.sql.*" %>
 <%@ page import ="java.util.*" %>
 <%
 List<String> user_id_list = new ArrayList<String>();
@@ -29,33 +29,69 @@ List<String> user_name_list = new ArrayList<String>();
 	catch(Exception e){
 		out.println(e);
 	}
-%>
-	<div class="container">
-		<div class="register-container-logo">
+%> --%>
+
+	<div class="container-register">
+	
+		<div class="container-logo">
+	  	<img src="../assets/logo_idio.png" alt="logo_idio.png" class="logo-big"> <br>
+	    <div class="logo-description">
+	      Overlap your imagination!
+	    </div>
+	  </div>
 		
-		</div>
-		<div class="register-container">
-			<form method="post" action="./validate_signup.jsp">
-				<div class="mb-3">
-				  	<label for="id" class="form-label">Id</label>
-				  	<input type="text" class="form-control" name="userid" id="signup-userid" placeholder="id">
-				</div>
-				<div class="mb-3">
-				  	<label for="username" class="form-label">Username</label>
-				  	<input type="text" class="form-control" name="username" id="signup-username" placeholder="username">
-				</div>
-				<div class="mb-3">
-				  	<label for="password" class="form-label">Password</label>
-				  	<input type="password" class="form-control" name="password" id="signup-password" placeholder="password">
-				</div>
-				<div class="mb-3">
-				  	<label for="email" class="form-label">Email address</label>
-				  	<input type="email" class="form-control" name="email" id="signup-email" placeholder="name@example.com">
-				</div>
-				<button class="w-100 btn btn-lg btn-primary" type="submit">Sign up</button>
-			</form>
-		</div>
+		<form method="post" action="./validate_signup.jsp" id="su-form">
+		  <div class="container-form">
+		    <div class="title-form">Sign up</div>
+		    <div class="container-input-form" id="container-input-form-userid">
+		      <span class="title-input">Id</span> <br>
+		      <div class="error" id="su-error-id">Please enter your id!</div>
+		      <input type="text" class="input-form" name="id" id="su-input-id" placeholder="id">
+		      <img src="../assets/check.png" alt="check.png" class="check-form" id="su-check-id">
+		    </div>
+		    <div class="container-check-availability">
+		    	<button type="button" class="input-check-availability">Check Availability</button>
+		    	<span class="availability-description" id="availablity-description-id">your id is available!</span>
+		    </div>
+		    
+		    <div class="container-input-form">
+		      <span class="title-input">User name</span> <br>
+		      <div class="error" id="su-error-username">Please enter your User name!</div>
+		      <input type="text" class="input-form" name="username" id="su-input-username" placeholder="username">
+		      <img src="../assets/check.png" alt="check.png" class="check-form" id="su-check-username">
+		    </div>
+		    
+		    <div class="container-input-form">
+		      <span class="title-input">Password</span> <br>
+		      <div class="error" id="su-error-password">Please enter your password!</div>
+		      <input type="password" class="input-form" name="password" id="su-input-password" placeholder="password">
+		      <img src="../assets/check.png" alt="check.png" class="check-form" id="su-check-password">
+		    </div>
+		    
+		    <div class="container-input-form">
+		      <span class="title-input">Confirm Password</span> <br>
+		      <div class="error" id="su-error-password-confirm">Please re-enter your password!</div>
+		      <input type="password" class="input-form" name="password-confirm" id="su-input-password-confirm" placeholder="confirm password">
+		      <img src="../assets/check.png" alt="check.png" class="check-form" id="su-check-password-confirm">
+		    </div>
+		    
+		    <div class="container-input-form">
+		      <span class="title-input">Email address</span> <br>
+		      <div class="error" id="su-error-email">Please enter your email address!</div>
+		      <input type="email" class="input-form" name="email" id="su-input-email" placeholder="name@example.com">
+		      <img src="../assets/check.png" alt="check.png" class="check-form" id="su-check-email">
+		    </div>
+		    
+		    <div class="container-button-submit">
+		      <button type="button" class="button-submit" onclick="ClickSignUp()">Submit</button>
+		  	</div>
+		    
+		  </div>
+  	</form>
+  
 	</div>
+
+	<script type="text/javascript" src="../js/signupScript.js"></script>
 </body>
 
 </html>

@@ -4,6 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>idio - Login</title>
+	<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="../css/registerStyle.css">
 </head>
 <body>
@@ -16,35 +17,34 @@
 	    </div>
 	  </div>
 	  
-	  <form method="post" action="./validate_signup.jsp">
+	  <form method="post" action="./validate_login.jsp" id="lo-form">
 		  <div class="container-form">
 		    <div class="title-form">Login</div>
 		    <div class="container-input-form">
 		      <span class="title-input">Id</span> <br>
 		      <div class="error" id="lo-error-id">Please enter your id!</div>
 		      <input type="text" name="userid" placeholder="Enter your id" class="input-form">
-		      <img src="../assets/check.png" alt="check.png" class="check-form">
 		    </div>
 		    
 		    <div class="container-input-form">
 		      <span class="title-input">Password</span> <br>
 		      <div class="error" id="lo-error-password">Please enter your password!</div>
 		      <input type="password" name="password" placeholder="Enter your Password" class="input-form">
-		      <img src="../assets/check.png" alt="check.png" class="check-form">
 		    </div>
 		    
 		    <div class="container-button-submit">
-		      <button type="button" class="button-submit">Submit</button>
+		      <button type="button" class="button-submit" onclick="ClickLogin()">Submit</button>
 		  	</div>
 		  	
 		  	<div class="container-signup">
-		      <a href="#">Haven't registered yet? Click here to sign up!</a>
+		      <a href="./signup.jsp">Create a new account here!</a>
 		    </div>
 		    
 		  </div>
 	  </form>
 	  
 	</div>
+	<script type="text/javascript" src="../js/loginScript.js"></script>
 </body>
 
 </html>
