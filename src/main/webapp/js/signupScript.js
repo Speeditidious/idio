@@ -12,10 +12,16 @@ $(function() {
 // Sign up button clicked
 function ClickSignUp(){
 	if(is_checked_id && is_checked_username && is_checked_password && is_checked_password_confirm && is_checked_email){
-		$('su-form').submit();
+		$('#su-form').submit();
 	}
 	else{
 		alert("Some inputs do not meet the requirements.");
+		console.log("is_available_id: " + is_available_id);
+		console.log("is_checked_id: " + is_checked_id);
+		console.log("is_checked_username: " + is_checked_username);
+		console.log("is_checked_password: " + is_checked_password);
+		console.log("is_checked_password_confirm: " + is_checked_password_confirm);
+		console.log("is_checked_email: " + is_checked_email);
 	}
 }
 
@@ -108,6 +114,7 @@ function InitializeSignUp(){
 			// pass
 			$('#su-error-username').hide();
 			$('#su-check-username').show();
+			is_checked_username = true;
 		});
 		
 		// password
@@ -143,6 +150,7 @@ function InitializeSignUp(){
 			// pass
 			$('#su-error-password').hide();
 			$('#su-check-password').show();
+			is_checked_password = true;
 		});
 		
 		// password confirm
@@ -170,6 +178,7 @@ function InitializeSignUp(){
 			// pass
 			$('#su-error-password-confirm').hide();
 			$('#su-check-password-confirm').show();
+			is_checked_password_confirm = true;
 		});
 		
 		// email
@@ -188,14 +197,15 @@ function InitializeSignUp(){
 			
 			// email format?
 			if (pattern_email.test(email_input) != true){
-				$('#su-error-id').show();
-				$('#su-error-id').text('Your email address is invalid!');
+				$('#su-error-email').show();
+				$('#su-error-email').text('Your email address is invalid!');
 				return;
 			}
 			
 			// pass
 			$('#su-error-email').hide();
 			$('#su-check-email').show();
+			is_checked_email = true;
 		});
     /* check whether the inputs are valid end */
     
@@ -204,7 +214,31 @@ function InitializeSignUp(){
 
 // Check whether id is available
 function CheckIdAvailable(){
+	var is_available = true;
 	var id_input = $('#su-input-id').val();
-	var user_id_list = '<%=user_id_list%>';
-	console.log(user_id_list);
+	var user_id_list = $('#user-id-list').val();
+	var user_id_arr = user_id_list.slice(1, -1);
+	user_id_arr = user_id_arr.split(',');
+	
+	user_id_arr.forEach(function(user_id) {
+		if(id_input === user_id){
+			is_available = false;
+		}
+	});
+	
+	if(is_available){
+		$('#availablity-description-id').show();
+		$('#availablity-description-id').css('color', 'lime');
+		$('#availablity-description-id').text('Your id is available!');
+		$('#su-error-id').hide();
+		$('#su-check-id').show();
+		is_available_id = true;
+		is_checked_id = true;
+	}
+	else{
+		$('#availablity-description-id').show();
+		$('#availablity-description-id').css('color', 'red');
+		$('#availablity-description-id').text('id not available!');
+		is_available_id = false;
+	}
 }

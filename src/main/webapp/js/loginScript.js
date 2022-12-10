@@ -8,7 +8,7 @@ $(function() {
 // Click Login button
 function ClickLogin(){
 	if(is_checked_id && is_checked_password){
-		$('lo-form').submit();
+		$('#lo-form').submit();
 	}
 	else{
 		alert("Please check your id and password again!");
@@ -25,40 +25,40 @@ function InitializeLogin(){
     
     /* check inputs */
     // id
-    $('#su-input-id').on('propertychange change paste input', function() {
-			var id_input = $('#su-input-id').val();
+    $('#lo-input-id').on('propertychange change paste input', function() {
+			var id_input = $('#lo-input-id').val();
 			
 			// Initialize check state since input changed
 			is_checked_id = false;
 			
 			// no input?
 			if (id_input === ''){
-				$('#su-error-id').show();
-				$('#su-error-id').text('Please enter your id!');
+				$('#lo-error-id').show();
+				$('#lo-error-id').text('Please enter your id!');
 				return;
 			}
 			
 			// pass
-			$('#su-error-id').hide();
+			$('#lo-error-id').hide();
 			is_checked_id = true;
 		});
 		
 		// password
-    $('#su-input-password').on('propertychange change paste input', function() {
-			var password_input = $('#su-input-password').val();
+    $('#lo-input-password').on('propertychange change paste input', function() {
+			var password_input = $('#lo-input-password').val();
 			
 			// Initialize check state since input changed
 			is_checked_password = false;
 			
 			// no input?
 			if (password_input === ''){
-				$('#su-error-password').show();
-				$('#su-error-password').text('Please enter your id!');
+				$('#lo-error-password').show();
+				$('#lo-error-password').text('Please enter your password!');
 				return;
 			}
 			
 			// pass
-			$('#su-error-password').hide();
+			$('#lo-error-password').hide();
 			is_checked_password = true;
 		});
 		/* check inputs */

@@ -8,7 +8,7 @@
 	<link rel="stylesheet" href="../css/registerStyle.css">
 </head>
 <body>
-<%-- <%@ page import ="java.sql.*" %>
+<%@ page import ="java.sql.*" %>
 <%@ page import ="java.util.*" %>
 <%
 List<String> user_id_list = new ArrayList<String>();
@@ -29,7 +29,9 @@ List<String> user_name_list = new ArrayList<String>();
 	catch(Exception e){
 		out.println(e);
 	}
-%> --%>
+%>
+
+<input id="user-id-list" value="<%=user_id_list%>" hidden>
 
 	<div class="container-register">
 	
@@ -50,7 +52,7 @@ List<String> user_name_list = new ArrayList<String>();
 		      <img src="../assets/check.png" alt="check.png" class="check-form" id="su-check-id">
 		    </div>
 		    <div class="container-check-availability">
-		    	<button type="button" class="input-check-availability">Check Availability</button>
+		    	<button type="button" class="input-check-availability" onclick="CheckIdAvailable()">Check Availability</button>
 		    	<span class="availability-description" id="availablity-description-id">your id is available!</span>
 		    </div>
 		    
@@ -90,7 +92,7 @@ List<String> user_name_list = new ArrayList<String>();
   	</form>
   
 	</div>
-
+	
 	<script type="text/javascript" src="../js/signupScript.js"></script>
 </body>
 

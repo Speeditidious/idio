@@ -19,9 +19,32 @@
 <%
 String user_name = "";
 String user_id = "";
+String post_id = "";
+
+String post_img = "";
+String post_title = "";
+String post_author = "";
+String post_description = "";
+
 	try{
 		user_name = request.getParameter("username");
 		user_id = request.getParameter("userid");
+		post_id = request.getParameter("postid");
+		
+		// get post informations
+		Class.forName("com.mysql.cj.jdbc.Driver");  // MySQL database connection
+    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/idio_db?" + "user=root2&password=root2");
+		
+    PreparedStatement ps = conn.prepareStatement("select post_img, post_title, post_author_id, post_description, post_like from post where post_id=?");
+    ps.setInt(1, Integer.parseInt(post_id));
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next()){
+			post_img = rs.getString("post_img");
+			post_title = rs.getString("post_title");
+			post_author = rs.getString("post_author_id");
+			post_description = rs.getString("post_description");
+		}
 	}
 	catch(Exception e){       
 		out.println(e);       
@@ -30,6 +53,11 @@ String user_id = "";
 
 <input type="text" id="main-user-name" value="<%=user_name%>" hidden>
 <input type="text" id="main-user-id" value="<%=user_id%>" hidden>
+
+<input type="text" id="look-post-img" value="<%=post_img%>" hidden>
+<input type="text" id="look-post-title" value="<%=post_title%>" hidden>
+<input type="text" id="look-post-author" value="<%=post_author%>" hidden>
+<input type="text" id="look-post-description" value="<%=post_description%>" hidden>
 
 	<!-- Header Start -->
 	<div class="header">
@@ -66,10 +94,10 @@ String user_id = "";
 	<!-- Banner Start -->
 	<div class="container-banner">
 		<div class="banner-title">
-			Upload Page
+			Welcome!
 		</div>
 		<div class="banner-description">
-			Good Luck!
+			Nice works are all here!
 		</div>
 	</div>
 	<!-- Banner End -->
@@ -80,66 +108,34 @@ String user_id = "";
 		<input type="text" name="id" value="<%=user_id%>" hidden>
 		
 		<div class="container-post">
-			<div class="post-category-title">
-				Upload
-			</div>
-			<hr size="2" color="gray">
-			
 			<div class="container-upload-title">
-				<span class="upload-text-title">Title</span> <br>
-				<input type="text" class="input-form" name="title" id="upload-input-title" placeholder="Please enter the title of this post">
+				<span class="upload-text-title">Title</span> <br><br>
+				<span class="look-text-author">Author</span> <br><br>
 			</div>
 			
 			<div class="container-upload-draw-title">
 				<div class="upload-draw-title">Canvas</div>
-				<div class="upload-draw-description">Drag & Drop brushes to the canvas to draw!</div>
+				<hr size="2" color="gray">
 			</div>
-			
-			<input type="text" name="image" id="upload-canvas-image" hidden>
-			
+		
 			<div class="container-upload-draw">
-				<div class="draw-canvas" id="canvas"></div>
-				
-				<div class="container-tool">
-					<div class="container-tool-selection">
-						<button type="button" class="button-tool-active" id="button-select-brush">Brush</button>
-					</div>
-					<div class="container-tool-brush">
-						<div class="container-pallete">
-							<input type="text" id="pallete" />
-							<div class="pallete-description">Select Color</div>
-						</div>
-						<div class="container-brush">
-							<div class="brush" id="brush-circle"><i class="fa-sharp fa-solid fa-circle"></i></div>
-							<div class="brush" id="brush-grip-lines"><i class="fa-sharp fa-solid fa-grip-lines"></i></div>
-							<div class="brush" id="brush-person"><i class="fa-sharp fa-solid fa-person"></i></div>
-							<div class="brush" id="brush-plus"><i class="fa-sharp fa-solid fa-plus"></i></div>
-							<div class="brush" id="brush-star"><i class="fa-sharp fa-solid fa-star"></i></div>
-							<div class="brush" id="brush-comment"><i class="fa-sharp fa-solid fa-comment"></i></div>
-						</div>
-						<div class="container-brush-selection">
-							<button type="button" class="button-brush-active" id="button-select-brush"><i class="fa-solid fa-arrow-left-long"></i>&nbsp;&nbsp;&nbsp;Prev</button>
-							<button type="button" class="button-brush-inactive" id="button-select-layer">Next&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
-						</div>
-					</div>
-				</div>
+				<div class="look-canvas" id="canvas"></div>
 			</div>
-			
+			<br><br>
 			<div class="container-upload-description">
 				<div class="upload-description-title">Description</div>
-				<textarea name="description" id="textarea-description" placeholder="Please enter the description of this post"></textarea>
+				<textarea readonly name="description" id="textarea-description"></textarea>
 			</div>
 			
 			<div class="container-upload-button">
-				<button type="button" class="button-upload" onclick="ClickUpload()">Upload</button>
+				<button type="button" class="button-upload" onclick="gotoMain()"><i class="fa-solid fa-rotate-left"></i>Back</button>
 			</div>
 		</div>
 	</form>
 	<!-- Upload End -->
 	
 	<script type="text/javascript" src="../js/gotoMainScript.js"></script>
-	<script type="text/javascript" src="../js/drawScript.js"></script>
-	<script type="text/javascript" src="../js/uploadScript.js"></script>
+	<script type="text/javascript" src="../js/lookScript.js"></script>
 </body>
 
 </html>
