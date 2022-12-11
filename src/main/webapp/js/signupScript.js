@@ -218,7 +218,7 @@ function CheckIdAvailable(){
 	var id_input = $('#su-input-id').val();
 	var user_id_list = $('#user-id-list').val();
 	var user_id_arr = user_id_list.slice(1, -1);
-	user_id_arr = user_id_arr.split(',');
+	user_id_arr = user_id_arr.split(', ');
 	
 	user_id_arr.forEach(function(user_id) {
 		if(id_input === user_id){

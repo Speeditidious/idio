@@ -153,7 +153,7 @@ String liked_post_list = "";
 		<input type="text" name="postid" id="look-post-id" hidden>
 	</form>
 	
-	<script type="text/javascript" src="../js/gotoMainScript.js"></script>
+	<script type="text/javascript" src="../js/mainScript.js"></script>
 	<script type="text/javascript" src="../js/headerLinkScript.js"></script>
 	<script type="text/javascript" src="../js/getPostsScript.js"></script>
 </body>
