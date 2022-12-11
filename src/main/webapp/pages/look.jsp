@@ -70,6 +70,8 @@ String post_description = "";
 			<div class="header-menu">
 				<ul>
 					<li><a onclick="gotoMain()">Main</a></li>
+					<li><a onclick="gotoPost()">Post</a></li>
+					<li><a onclick="gotoRank()">Rank</a></li>
 					<li><a href="./login.html" id="header-profile">
 					<%
 						if(user_name == null){
@@ -134,7 +136,7 @@ String post_description = "";
 	</form>
 	<!-- Upload End -->
 	
-	<script type="text/javascript" src="../js/gotoMainScript.js"></script>
+	<script type="text/javascript" src="../js/headerLinkScript.js"></script>
 	<script type="text/javascript" src="../js/lookScript.js"></script>
 </body>
 

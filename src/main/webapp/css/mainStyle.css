@@ -324,7 +324,7 @@ body{
 .brush{
 	width: 100px;
 	height: 100px;
-	font-size: 90px;
+	font-size: 80px;
 	cursor: move;
 	line-height: 100px;
 	text-align: center;
@@ -399,3 +399,56 @@ body{
 	font-size: 18px;
 }
 /* look end */
+
+/* rank start */
+.table-top-author{
+	width: 800px;
+	margin: 20px auto;
+	background-color: white;
+	border: 1px solid gray;
+	border-radius: 5px;
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.2);
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.table-top-author th, td{
+	border: 1px solid gray;
+	padding: 10px 5px;
+}
+
+.table-top-author th{
+	border-bottom: double #497174;
+}
+
+.table-top-author-title{
+	background-color: #EB6440;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.rank-most-liked-post{
+	margin: 20px 0px 0px 0px;
+	display: flex;
+	font-size: 60px;
+	gap: 30px;
+}
+
+.rank-most-liked-post i{
+	width: 270px;
+	border-bottom: 2px solid gray;
+}
+
+.rank-most-liked-post > i:nth-child(1){
+	border-bottom: 2px solid #f5df36;
+}
+
+.rank-most-liked-post > i:nth-child(2){
+	border-bottom: 2px solid #859194;
+}
+
+.rank-most-liked-post > i:nth-child(3){
+	border-bottom: 2px solid #c28d44;
+}
+/* rank end */

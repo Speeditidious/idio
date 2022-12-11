@@ -42,6 +42,8 @@ String user_id = "";
 			<div class="header-menu">
 				<ul>
 					<li><a onclick="gotoMain()">Main</a></li>
+					<li><a onclick="gotoPost()">Post</a></li>
+					<li><a onclick="gotoRank()">Rank</a></li>
 					<li><a href="./login.html" id="header-profile">
 					<%
 						if(user_name == null){
@@ -110,16 +112,16 @@ String user_id = "";
 							<div class="pallete-description">Select Color</div>
 						</div>
 						<div class="container-brush">
-							<div class="brush" id="brush-circle"><i class="fa-sharp fa-solid fa-circle"></i></div>
-							<div class="brush" id="brush-grip-lines"><i class="fa-sharp fa-solid fa-grip-lines"></i></div>
-							<div class="brush" id="brush-person"><i class="fa-sharp fa-solid fa-person"></i></div>
-							<div class="brush" id="brush-plus"><i class="fa-sharp fa-solid fa-plus"></i></div>
-							<div class="brush" id="brush-star"><i class="fa-sharp fa-solid fa-star"></i></div>
-							<div class="brush" id="brush-comment"><i class="fa-sharp fa-solid fa-comment"></i></div>
+							<div class="brush" id="brush-1"></div>
+							<div class="brush" id="brush-2"></div>
+							<div class="brush" id="brush-3"></div>
+							<div class="brush" id="brush-4"></div>
+							<div class="brush" id="brush-5"></div>
+							<div class="brush" id="brush-6"></div>
 						</div>
 						<div class="container-brush-selection">
-							<button type="button" class="button-brush-active" id="button-select-brush"><i class="fa-solid fa-arrow-left-long"></i>&nbsp;&nbsp;&nbsp;Prev</button>
-							<button type="button" class="button-brush-inactive" id="button-select-layer">Next&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
+							<button type="button" class="button-brush-inactive" id="button-brush-prev" onclick="PrevBrushSet()"><i class="fa-solid fa-arrow-left-long"></i>&nbsp;&nbsp;&nbsp;Prev</button>
+							<button type="button" class="button-brush-inactive" id="button-brush-next" onclick="NextBrushSet()">Next&nbsp;&nbsp;&nbsp;<i class="fa-solid fa-arrow-right-long"></i></button>
 						</div>
 					</div>
 				</div>
@@ -137,7 +139,7 @@ String user_id = "";
 	</form>
 	<!-- Upload End -->
 	
-	<script type="text/javascript" src="../js/gotoMainScript.js"></script>
+	<script type="text/javascript" src="../js/headerLinkScript.js"></script>
 	<script type="text/javascript" src="../js/drawScript.js"></script>
 	<script type="text/javascript" src="../js/uploadScript.js"></script>
 </body>
